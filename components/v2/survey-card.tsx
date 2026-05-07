@@ -337,17 +337,18 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
 
   const handleAddressSelect = (address: string, details: AddressDetails) => {
     setSurveyData({ ...surveyData, address })
-    setAddressVerified(true)
-
     const state = details.state?.toUpperCase() || ""
     const county = details.county || ""
 
     const stateOk = config.serviceStates.length === 0 || config.serviceStates.includes(state)
     const countyOk = !config.serviceArea || config.serviceArea === "Your Area" || county.toLowerCase().includes(config.serviceArea.toLowerCase())
     if (stateOk && countyOk) {
+      setAddressVerified(true)
       setTimeout(() => { setStep(2) }, 300)
       return
     }
+
+    setAddressVerified(false)
 
     setTimeout(() => { setDisqualifyReason("outsideArea"); setIsDisqualified(true) }, 300)
   }

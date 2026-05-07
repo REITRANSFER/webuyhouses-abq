@@ -405,8 +405,6 @@ export function SurveyCard() {
 
   const handleAddressSelect = (address: string, details: AddressDetails) => {
     setSurveyData({ ...surveyData, address })
-    setAddressVerified(true)
-    
     // Check if address is in service area
     if (!isInServiceArea(details.state)) {
       setSelectedState(details.state || "Unknown")
@@ -415,6 +413,7 @@ export function SurveyCard() {
     }
     
     // Auto-advance to next step after address selection (only if in Albuquerque, NM area)
+    setAddressVerified(true)
     setTimeout(() => {
       setStep(2)
     }, 300)
