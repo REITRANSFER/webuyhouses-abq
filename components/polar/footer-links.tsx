@@ -8,7 +8,7 @@ export function FooterLinks() {
     <footer className="bg-white px-4 lg:px-8">
       <div className="mx-auto max-w-7xl border-t border-gray-200 py-8">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
-          <img src={config.logoUrl} alt={config.companyName} width={320} height={80} className="h-20 w-auto" />
+          <img src={config.logoUrl} alt={config.companyName} width={400} height={110} className="h-24 md:h-28 w-auto" />
           <p className="text-sm text-gray-500">We buy houses in any condition. No obligation, no pressure.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
             <Link href="/privacy" className="transition-colors hover:text-gray-900">Privacy Policy</Link>
